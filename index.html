@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta
+      name="description"
+      content="Author: lokeshrangani, Get Current Moment of different parts of the world"
+    />
+    <link rel="stylesheet" href="css/styles.min.css" />
+    <link rel="stylesheet" href="css/styles.scss" />
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="js/moment.js" type="text/javascript"></script>
+    <script src="js/moment-timezone.min.js" type="text/javascript"></script>
+    <script
+      src="js/moment-timezone-with-data-10-year-range.js"
+      type="text/javascript"
+    ></script>
+    <script src="js/clock.js" type="text/javascript"></script>
+    <title>Now</title>
+  </head>
+  <body>
+    <div id="message">Text Copied</div>
+
+    <div class="container">
+      <h1>NOW</h1>
+      <button onclick="return convertTableToArrayObject();">Copy</button>
+
+      <table
+        id="example"
+        class="row-border"
+        style="max-width: 100%; height: auto"
+      >
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Moment</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#example").DataTable({
+          responsive: true,
+        });
+      });
+      listTimeZone();
+    </script>
+  </body>
+</html>
